@@ -27,8 +27,8 @@ public class DecisionTreeTraverser {
     @Context
     public Log log;
 
-    @Procedure(name = "com.maxdemarzi.validate", mode = Mode.READ)
-    @Description("CALL com.maxdemarzi.validate(parameter, value) - validate a parameter)")
+    @Procedure(name = "com.maxdemarzi.decision_tree.validate", mode = Mode.READ)
+    @Description("CALL com.maxdemarzi.decision_tree.validate(parameter, value) - validate a parameter)")
     public Stream<ValidationResult> validateParameter(@Name("parameter") String name, @Name("value") String value) {
         boolean valid = false;
         Node parameter = tx.findNode(Labels.Parameter, "name", name);
